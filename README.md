@@ -1,6 +1,16 @@
-# CodeX5
-Repositorio del segundo semestre del grupo "CodeX5", somos estudiantes de la Tecnicatura Universitaria en Programación UTN 2024
-##  <h2 align="center">Equipo de Trabajo</h2>
+
+<p align="center" style="position: relative; width: 480px; height: 350px; overflow: hidden; border-radius: 20px;">
+  <img src="CodeX5/Codex5.gif" alt="Descripción del GIF" style="position: absolute; top: -10px; width: 480px; height: auto;">
+</p>
+
+# <h2 align="center">Repositorio del segundo semestre del grupo "CodeX5", somos estudiantes de la Tecnicatura Universitaria en Programación UTN 2024</h2>
+
+
+<p align="center">
+  <img src="CodeX5/Logo%20Grupo%20CodeX5.jpg" alt="Descripción de la Foto" width="350px" height="350px" style="border-radius: 100px;">
+</p>
+
+## <h2 align="center">Equipo de Trabajo</h2>
 <table align="center">
   <tr>
     <td align="center">
