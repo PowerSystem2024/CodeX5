@@ -19,6 +19,7 @@ const educacion = ref([
 </script>
 
 <template>
+  <section id="educacion">
   <h1>Educacion - Cursos</h1>
   <ul>
     <li v-for="(item, index) in educacion" :key="index" :style="{ '--accent-color': fechaColor[index].color }">
@@ -28,6 +29,7 @@ const educacion = ref([
     </li>
   </ul>
   <div class="credits"><a target="_blank" href="https://www.freepik.com/free-vector/infographic-template-with-yearly-info_1252895.htm"></a></div>
+</section>
 </template>
 
 <style scoped>
