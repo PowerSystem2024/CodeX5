@@ -3,6 +3,7 @@ import NavBar from './components/NavBar.vue';
 import DatosPersonales from './components/DatosPersonales.vue';
 import Educacion from './components/EducacionComponente.vue';
 import ExperienciaComponente from './components/ExperienciaComponente.vue';
+import ProyectosComponentes from './components/ProyectosComponentes.vue';
 </script>
 
 <template>
@@ -12,6 +13,7 @@ import ExperienciaComponente from './components/ExperienciaComponente.vue';
       <DatosPersonales/>
       <Educacion/>
       <ExperienciaComponente/>
+      <ProyectosComponentes/>
 
 
    </header>
