@@ -1,3 +1,4 @@
+
 package test;
 
 import domain.Persona;
@@ -11,17 +12,17 @@ public class PersonaPrueba {
         System.out.println("persona2 = " + persona2);
         imprimir(persona1);
         imprimir(persona2);
-        //this.contador= 10; // no se puede referenciar desde un contexto estatico
+        //this.contador = 10; //No se puede referenciar desde un contexto estatico
         PersonaPrueba personaP1 = new PersonaPrueba();
         System.out.println(personaP1.getContador());
-
     }
-
+    
     public static void imprimir(Persona persona){
         System.out.println("persona = " + persona);
     }
+    
     public int getContador(){
-       imprimir(new Persona("Liliana"));
-       return this.contador;
+        imprimir(new Persona("Liliana"));
+        return this.contador;
     }
 }
