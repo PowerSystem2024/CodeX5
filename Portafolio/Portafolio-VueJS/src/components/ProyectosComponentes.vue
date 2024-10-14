@@ -1,6 +1,7 @@
 <script setup>
 const proyectos = [
   {
+    id: 1,
     imgSrc: "/src/assets/Codex5-1.jpg",
     titulo: "E-commerce",
     descripcion: "Creé una plataforma de comercio electrónico que incrementó las ventas en un 355% durante el primer año.",
@@ -8,6 +9,7 @@ const proyectos = [
     githubLink: "https://github.com"
   },
   {
+    id: 2,
     imgSrc: "/src/assets/Codex5-2.jpg",
     titulo: "App de Gestión",
     descripcion: "Desarrollé una aplicación de gestión de tareas para mejorar la productividad en un 40%.",
@@ -15,6 +17,7 @@ const proyectos = [
     githubLink: "https://github.com"
   },
   {
+    id: 3,
     imgSrc: "/src/assets/Codex5-3.jpg",
     titulo: "App Delivery",
     descripcion: "App prototipo estilo pedidosYa , Rappi, Glovo.",
@@ -26,7 +29,7 @@ const proyectos = [
 
 <template>
   <div class="galeria">
-    <div class="proyecto" v-for="(proyecto, index) in proyectos" :key="index">
+    <div class="proyecto" v-for="(proyecto, index) in proyectos" :key="index.id">
       <img :src="proyecto.imgSrc" :alt="proyecto.titulo">
       <div class="proyecto-info">
         <h3>{{ proyecto.titulo }}</h3>
