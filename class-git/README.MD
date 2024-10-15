@@ -246,3 +246,28 @@ git push origin nombre-de-la-rama #Publicar una rama local al repositorio remoto
 ```
 
 Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git utilizando el comando gitk. Gitk fue el primer visor gráfico que se desarrolló para ver de manera gráfica el historial de un repositorio de Git.
+
+
+# CLASE 09 MIÉRCOLES 9 DE OCTUBRE DEL 2024 - Portafolio 9
+## Configurar múltiples colaboradores en un repositorio de GitHub
+
+Por defecto, cualquier persona puede clonar o descargar tu proyecto desde GitHub, pero no pueden crear commits, ni ramas. Esto significa que pueden copiar tu proyecto pero no colaborar con él si es público. Si el proyecto es privado, será necesario que los invites específicamente, de lo contrario no podrán verlo.
+
+Existen varias formas de aceptar contribuciones. Una de ellas es añadir a cada persona de tu equipo como colaborador del repositorio.
+
+## Cómo agregar colaboradores en GitHub
+
+Debes entrar a la configuración de colaboradores de tu proyecto en:
+
+- **Repositorio > Settings > Collaborators**
+
+Ahí puedes añadir el email o el nombre de usuario de los nuevos colaboradores.
+
+## Cambiar el mensaje de un commit como colaborador
+
+Si has cometido un error en el mensaje de un commit, puedes cambiarlo de la siguiente manera:
+
+```bash
+git commit --amend    # Corregir el mensaje
+git pull origin main   # Traer los últimos cambios del repositorio remoto
+git push --set-upstream origin main  # Subir el cambio corregido
