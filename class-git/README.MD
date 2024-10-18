@@ -210,6 +210,16 @@ Esto eliminará la etiqueta identificada por en el repositorio local.
 
 En resumen, las etiquetas en Git son esenciales para asignar versiones y capturar instantáneas importantes en el historial de un proyecto. Aprender a crear, listar, compartir y eliminar etiquetas mejorará tu flujo de trabajo con Git
 
+# CLASE 07 MIÉRCOLES 25 DE SEPTIEMBRE DEL 2024 - Portafolio 7
+
+Error con los tags
+Investigación: Si un tag es imposible generarlo dos veces ¿Cómo es que existe el error de dos tags con el mismo nombre?
+
+¿Cómo se origina este problema o error?
+
+La respuesta debe ser enviada antes de las 23 horas por cada grupo, deben enviar comandos 
+y todo los pasos que harían frente a este conflicto.
+
 # CLASE 08 MIÉRCOLES 2 DE OCTUBRE DEL 2024 - Portafolio 8
 
 Manejo de ramas en GitHub
