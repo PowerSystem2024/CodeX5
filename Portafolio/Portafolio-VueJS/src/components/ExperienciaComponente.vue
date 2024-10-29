@@ -1,74 +1,102 @@
 <script setup>
+import flecha from '/src/assets/addgente.svg';
 import { ref } from 'vue';
-const titulo = 'Desarrollador Full Stack';
-const fecha = 'Desde Enero 2022 / Julio 2024';
+const titulo = 'Experiencia en CodeX5';
+const fecha = 'Desde Abril 2024 / Diciembre 2024';
 const experiencias = ref([
-  { id: 1, src: '/src/assets/github_icon.svg', parrafo: 'Lideré un equipo de 5 desarrolladores en la creación de una plataforma de comercio electrónico que incremento las ventas en un 35% durante el primer año' },
-  { id: 2, src: 'src/assets/github_icon.svg', parrafo: 'Diseñé y desarrollé aplicaciones web utilizando Node.js, React y MongoDB, logrando reducir el tiempo de carga de las paginas en un 50%' },
-  { id: 3, src: 'src/assets/github_icon.svg', parrafo: 'Implementé soluciones de autenticación y autorización, mejorando la seguridad del sitio web y reduciendo los intenteos de acceso no autorizado en un 20%' },
-  { id: 4, src: 'src/assets/github_icon.svg', parrafo: 'Colaboré con diseñadores de UX/UI para crear interfaces de usuario atractivas y fáciles de usar, aumentando la satisfaccion del cliente en un 15%' },
-  { id: 5, src: 'src/assets/github_icon.svg', parrafo: 'Automatizé procesos de despliegue continuo utilizando Jenkins y Docker, reduciendo los tiempos de despliegue en un 40%' },
+  { id: 1, src: flecha, parrafo: 'Colaboramos como equipo en el desarrollo de aplicaciones innovadoras, utilizando metodologías ágiles que mejoraron la eficiencia en nuestros proyectos.' },
+  { id: 2, src: flecha, parrafo: 'Diseñamos interfaces intuitivas y amigables para el usuario, asegurando la satisfacción de quienes utilizan nuestras aplicaciones.' },
+  { id: 3, src: flecha, parrafo: 'Implementamos soluciones efectivas para la gestión de datos, optimizando el rendimiento de nuestras aplicaciones y asegurando su escalabilidad.' },
+  { id: 4, src: flecha, parrafo: 'Fomentamos un ambiente de trabajo colaborativo y comunicativo entre los miembros del grupo, fortaleciendo así nuestra capacidad de trabajo en equipo.' },
+  { id: 5, src: flecha, parrafo: 'Contribuimos en la capacitación de nuevos integrantes, compartiendo conocimientos y mejores prácticas para el desarrollo de proyectos.' },
 ]);
 </script>
 
 <template>
-    <section id="experiencia">
+  <section id="experiencia">
     <div class="card">
       <h3 class="titulo">{{titulo}}</h3>
       <p class="fecha">{{fecha}}</p>
       <ul class="listado">
         <li class="item" v-for="experiencia in experiencias" :key="experiencia.id">
-            <img class="imagen-svg" :src="experiencia.src" width="45rem" :alt="experiencia.parrafo">
-            <p>{{ experiencia.parrafo }}</p>
+          <img class="imagen-svg" :src="experiencia.src" width="45rem" :alt="experiencia.parrafo">
+          <p>{{ experiencia.parrafo }}</p>
         </li>
-        <!--<li class="item"><img class="imagen-svg" src="@/assets/cv_icon.svg" width="45rem" alt="">
-            Lideré un equipo de 5 desarrolladores en la creación de una plataforma de comercio electrónico que incrementó las ventas en un 35% durante el primer año.
-        </li>
-        <li class="item"><img class="imagen-svg" src="@/assets/cv_icon.svg" width="45rem" alt="">
-            Diseñé y desarrollé aplicaciones web utilizando Node.js, React y MongoDB, logrando reducir el tiempo de carga de las páginas en un 50%.
-        </li>
-        <li class="item"><img class="imagen-svg" src="@/assets/cv_icon.svg" width="45rem" alt="">
-            Implementé soluciones de autenticación y autorización, mejorando la seguridad del sitio web y reduciendo los intentos de acceso no autorizados en un 25%.
-        </li>
-        <li class="item"><img class="imagen-svg" src="@/assets/cv_icon.svg" width="45rem" alt="">
-            Colaboré con diseñadores de UX/UI para crear interfaces de usuario atractivas y fáciles de usar, aumentando la satisfacción del cliente en un 30%.</li>
-
-        <li class="item"><img class="imagen-svg" src="@/assets/cv_icon.svg" width="45rem" alt="">
-            Automaticé procesos de despliegue continuo utilizando Jenkins y Docker, reduciendo los tiempos de despliegue en un 40%.
-        </li>-->
       </ul>
     </div>
-    </section>
-  </template>
-  
-  <style scoped>
-.card{
-      display: flex;
-      flex-direction: column;
-      padding: 2rem;
-      background-color: rgb(28, 41, 52);
-      border-radius: 15px;
+  </section>
+</template>
+
+<style scoped>
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: #A0D2EB; /* Azul Cielo */
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
 }
 
-.titulo{
-   font-size: 1.5rem;
-   color: coral;
+.titulo {
+  font-size: 1.5rem;
+  color: #005B96; /* Azul Profundo */
+  text-align: center; /* Centrar título */
 }
 
-.fecha{
-   font-size: 1rem;
-   color: burlywood;
-   margin-bottom: 1rem;
+.fecha {
+  font-size: 1rem;
+  color: #0288D1; /* Azul Real */
+  margin-bottom: 1rem;
+  text-align: center; /* Centrar fecha */
 }
 
-.listado{
-   display: flex;
-   flex-direction: column;
+.listado {
+  display: flex;
+  flex-direction: column;
 }
 
-.item{
-   align-items: center;
-   display: flex;
-   padding: 1rem;
-} 
-  </style>
+.item {
+  align-items: flex-start; /* Alinear a la izquierda */
+  display: flex;
+  padding: 1rem;
+  padding-left: 0; /* Eliminar padding izquierdo */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Línea sutil entre ítems */
+}
+
+.item:last-child {
+  border-bottom: none; /* Quitar la línea del último ítem */
+}
+
+.imagen-svg {
+  margin-right: 1rem; /* Espacio entre la imagen y el texto */
+  filter: brightness(0) invert(1); /* Invertir colores de la imagen */
+}
+
+@media (min-width: 40rem) {
+  ul {
+    grid-template-columns: 1fr var(--line-w) 1fr;
+  }
+  ul::before {
+    grid-column: 2;
+  }
+  ul li:nth-child(odd) {
+    grid-column: 1;
+  }
+  ul li:nth-child(even) {
+    grid-column: 3;
+  }
+
+  /* start second card */
+  ul li:nth-child(2) {
+    grid-row: 2/4;
+  }
+}
+
+.credits {
+  margin-top: 1rem;
+  text-align: right;
+}
+.credits a {
+  color: var(--color);
+}
+</style>
