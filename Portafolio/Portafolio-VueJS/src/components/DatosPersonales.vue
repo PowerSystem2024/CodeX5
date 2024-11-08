@@ -1,144 +1,79 @@
 <script setup>
-import linkedin from '/src/assets/linkedin_icon.svg';
-import instagram from '/src/assets/instagram_icon.svg';
-import github from '/src/assets/github_icon.svg';
-import cv from '/src/assets/cv_icon.svg';
-
-const title = "CodeX5";
-const descripcion = "Grupo de Programación - Tecnicatura Universitaria en Programación, UTN FRSR";
-const residencia = "San Rafael, Mendoza, Argentina";
-const presentacion = "Hola, bienvenidos a nuestro portafolio de proyectos. Somos CodeX5, un grupo de estudiantes de programación web y móvil.";
-
+const title = "Ana Castro Nieto"
+const descripcion = "Tecnica Universitaria en Programación - UTN"
+const residencia = "San Rafael, Mendoza Argentina"
+const presentacion = "Hola, Bienvenido a mi portafolio de proyectos, soy desarrolladora web con experiencia en el desarrollo de aplicaciones web y moviles."
 const redesSociales = [
-  { id: 1, name: "Linkedin", src: linkedin, url: 'https://ar.linkedin.com/' },
-  { id: 2, name: "Instagram", src: instagram, url: 'https://instagram.com/' },
-  { id: 3, name: "Github", src: github, url: 'https://github.com/orgs/PowerSystem2024/teams/codex5' },
-  { id: 4, name: "Curriculum Vitae", src: cv, url: '' },
+    {id:1, name:"Linkedin", src:'/src/assets/linkedin_icon.svg',url:'https://ar.linkedin.com/'},
+    {id:1, name:"Instagram", src:'/src/assets/instagram_icon.svg',url:'https://instagram.com/'},
+    {id:1, name:"Github", src:'/src/assets/github_icon.svg',url:'https://github.com/'},
+    {id:1, name:"CurriculumVitae", src:'/src/assets/cv_icon.svg',url:''},
 ];
+const telefono = "+54 2604651804"
 </script>
 
 <template>
-  <section class="datos-personales">
+<section class="datos-personales">
     <div class="card">
-      <h1>{{ title }}</h1>
-      <h2>{{ descripcion }}</h2>
-      <p class="presentacion">{{ presentacion }}</p>
-      <h4>{{ residencia }}</h4>
-      <ul class="container-lista">
-        <li v-for="red in redesSociales" :key="red.id">
-          <a :href="red.url" target="_blank" rel="noopener noreferrer">
-            <img class="icon-redsocial" :src="red.src" width="35" :alt="red.name">
-          </a>
-        </li>
-      </ul>
+        <h1>{{ title }}</h1>
+        <h2>{{ descripcion }}</h2>
+        <p>{{ presentacion }}</p>
+        <ul class="container-lista">
+            <li v-for="red in redesSociales":key="red.id">
+                <a href="red.url"><img class="icon-redsocial" :src="red.src" width="35rem" :alt="red.name"></a>
+            </li>
+        </ul>
+        <h3>Mi telefono personal: {{ telefono }}</h3>
+        <h4>{{ residencia }}</h4>
     </div>
-  </section>
+</section>
 </template>
 
 <style scoped>
-.datos-personales {
-  padding: 2rem 0; /* Espaciado superior e inferior */
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
 }
 
 .card {
-  background-color: #A0D2EB; /* Azul Cielo */
-  border-radius: 10px;
-  padding: 20px; /* Espaciado interno aumentado */
-  margin: 20px; /* Espaciado externo aumentado */
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Sombra más intensa */
-}
-
-h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #005B96; /* Azul Profundo */
-  margin-bottom: 0.5rem; /* Espacio debajo del título */
-}
-
-h2 {
-  font-size: 1.5rem;
-  color: #0288D1; /* Azul Real */
-  margin-bottom: 1rem; /* Espacio debajo de la descripción */
-}
-
-.presentacion {
-  font-size: 1.2rem;
-  font-weight: 400; /* Peso normal */
-  margin-bottom: 1.5rem; /* Espacio debajo de la presentación */
-  color: #005B96; /* Azul Profundo */
-}
-
-h4 {
-  font-size: 1rem;
-  color: #00507a; /* Color gris más claro para la residencia */
-  margin-bottom: 1.5rem; /* Espacio debajo de la residencia */
+    background-color: #e1bee7; /* Fondo violeta pastel */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    color: #4a148c; /* Texto violeta oscuro */
 }
 
 .container-lista {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
-  margin: 1rem 0; /* Margen superior e inferior */
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
 .icon-redsocial {
-  background-color: transparent; /* Fondo transparente */
-  border-radius: 50%;
-  padding: 5px; /* Espaciado interno */
-  margin: 0 5px; /* Espacio horizontal entre iconos */
-  transition: background-color 0.3s; /* Suave transición */
+    align-items: center;
+    background-color: #f3e5f5; /* Fondo violeta claro */
+    border-radius: 50%;
+    padding: 2px;
+    margin: 5px;
+    box-shadow: 0 0 5px rgba(171, 71, 188, 0.7); /* Sombra violeta pastel */
 }
 
 .icon-redsocial:hover {
-  background-color: #ffffff; /* Fondo suave al pasar el ratón */
+    background-color: #ce93d8; /* Cambio a un violeta más fuerte */
+    box-shadow: 0 0 5px rgba(156, 39, 176, 0.8);
 }
 
-/* Media Queries para Responsividad */
-@media (max-width: 768px) {
-  h1 {
-    font-size: 2rem; /* Ajustar el tamaño de fuente del título */
-  }
-
-  h2 {
-    font-size: 1.3rem; /* Ajustar el tamaño de fuente de la descripción */
-  }
-
-  .presentacion {
-    font-size: 1rem; /* Ajustar el tamaño de fuente del párrafo */
-  }
-
-  .card {
-    padding: 15px; /* Reducir el espaciado interno en pantallas pequeñas */
-    margin: 10px; /* Reducir el espaciado externo en pantallas pequeñas */
-  }
-
-  h4 {
-    font-size: 0.9rem; /* Ajustar el tamaño de fuente de la residencia */
-  }
-
-  .container-lista {
-    flex-wrap: wrap; /* Permitir que los iconos se envuelvan en líneas */
-    justify-content: center; /* Centrar los iconos */
-  }
-}
-
-@media (max-width: 700px) {
-  h1 {
-    font-size: 1.8rem; /* Ajustar aún más el tamaño de fuente del título */
-  }
-
-  h2 {
-    font-size: 1.2rem; /* Ajustar aún más el tamaño de fuente de la descripción */
-  }
-
-  .presentacion {
-    font-size: 0.9rem; /* Ajustar aún más el tamaño de fuente del párrafo */
-  }
-
-  h4 {
-    font-size: 0.8rem; /* Reducir el tamaño de fuente de la residencia */
-  }
+h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 </style>

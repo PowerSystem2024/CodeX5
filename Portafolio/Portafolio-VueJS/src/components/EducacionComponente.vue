@@ -1,38 +1,38 @@
-<script setup>
+<script setup> 
 import { ref } from 'vue';
 
 const fechaColor = ref([
-  { color: "#7A7A7A" },
-  { color: "#BFBFBF" },
-  { color: "#D1D1D1" },
-  { color: "#A0A0A0" },
-  { color: "#8C8C8C" }
+  { color: "#d1c4e9" },
+  { color: "#ba68c8" },
+  { color: "#7e57c2" },
+  { color: "#9575cd" },
+  { color: "#ce93d8" }
 ]);
 
-const integrantes = ref([
-  { nombre: 'Santiago Calzolari', descripcion: 'Desarrollador Frontend, con experiencia en Vue.js y React.' },
-  { nombre: 'Ana Castro', descripcion: 'Especialista en bases de datos y desarrollo de backend.' },
-  { nombre: 'Leonel Palominos', descripcion: 'Experto en diseño de interfaces y experiencia de usuario.' },
-  { nombre: 'Karen Cespedes', descripcion: 'Futura ingeniera de software con pasión por la programación y desarrollo de videojuegos.' },
-  { nombre: 'Santino Salatino', descripcion: 'Programador entusiasta que se especializa en aplicaciones móviles.' }
+const educacion = ref([
+  { fecha: '2024', title: 'Tecnicatura Universitaria en Programación', descripcion: 'Incumbencias Profesionales: Operación y programación de computadoras, desarrollo de programas en distintos lenguajes, análisis y control de sistemas informáticos.' },
+  { fecha: '2023', title: 'Desarrollador Full Stack', descripcion: 'Trabajé en XYZ Tech, donde diseñé y desarrollé aplicaciones web completas utilizando tecnologías como Node.js, React y MongoDB.' },
+  { fecha: '2022', title: 'Internship en Desarrollo Web', descripcion: 'Realicé una pasantía en ABC Solutions, contribuyendo en la creación de interfaces de usuario y optimización de sitios web.' },
+  { fecha: '2021', title: 'Proyecto Personal - Aplicación de Gestión de Tareas', descripcion: 'Desarrollé una aplicación para la gestión de tareas diarias usando HTML, CSS y JavaScript.' },
+  { fecha: '2020', title: 'Curso de Introducción a la Programación', descripcion: 'Completé un curso en línea sobre fundamentos de programación, donde aprendí conceptos básicos.' }
 ]);
 </script>
 
 <template>
-  <section id="integrantes">
-    
-    <ul>
-      <li v-for="(integrante, index) in integrantes" :key="index" :style="{ '--accent-color': fechaColor[index].color }">
-        <div class="nombre">{{ integrante.nombre }}</div>
-        <div class="line"></div>
-        <div class="descripcion">{{ integrante.descripcion }}</div>
-      </li>
-    </ul>
-  </section>
+  <section id="educacion">
+  <h1>Educacion - Cursos</h1>
+  <ul>
+    <li v-for="(item, index) in educacion" :key="index" :style="{ '--accent-color': fechaColor[index].color }">
+      <div class="date">{{ item.fecha }}</div>
+      <div class="title">{{ item.title }}</div>
+      <div class="descr">{{ item.descripcion }}</div>
+    </li>
+  </ul>
+  <div class="credits"><a target="_blank" href="https://www.freepik.com/free-vector/infographic-template-with-yearly-info_1252895.htm"></a></div>
+</section>
 </template>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
 *,
@@ -44,8 +44,8 @@ const integrantes = ref([
 }
 
 body {
-  --color: rgba(30, 30, 30);
-  --bgColor: rgba(245, 245, 245);
+  --color: rgba(63, 81, 181);
+  --bgColor: #ede7f6;
   min-height: 100vh;
   display: grid;
   align-content: center;
@@ -73,21 +73,18 @@ ul {
   margin-inline: auto;
 }
 
-/* line */
 ul::before {
   content: "";
   grid-column: 1;
   grid-row: 1 / span 20;
-  background: #4696ff;
+  background: #b39ddb;
   border-radius: calc(var(--line-w) / 2);
 }
 
-/* row gaps */
 ul li:not(:last-child) {
   margin-bottom: var(--row-gap);
 }
 
-/* card */
 ul li {
   grid-column: 2;
   --inlineP: 1.5rem;
@@ -97,31 +94,85 @@ ul li {
   grid-template-rows: min-content min-content min-content;
 }
 
-/* nombre */
-ul li .nombre {
-  color: var(--color);
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.5rem; 
-  font-weight: 700;
+ul li .date {
+  --dateH: 3rem;
+  height: var(--dateH);
+  margin-inline: calc(var(--inlineP) * -1);
   text-align: center;
-  padding: 0.5rem;
+  background-color: var(--accent-color);
+  color: white;
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: grid;
+  place-content: center;
   position: relative;
+  border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
 }
 
-/* line under nombre */
-ul li .line {
-  height: 1px; 
-  background: white; 
-  margin-top: 0.25rem; 
+ul li .date::before {
+  content: "";
+  width: var(--inlineP);
+  aspect-ratio: 1;
+  background: var(--accent-color);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+  position: absolute;
+  top: 100%;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  right: 0;
 }
 
-/* descripcion */
-ul li .descripcion {
-  background: transparent; 
+ul li .date::after {
+  content: "";
+  position: absolute;
+  width: 2rem;
+  aspect-ratio: 1;
+  background: var(--bgColor);
+  border: 0.3rem solid var(--accent-color);
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+}
+
+ul li .title,
+ul li .descr {
+  background: var(--bgColor);
   position: relative;
   padding-inline: 1.5rem;
-  font-weight: 300; 
+}
+
+ul li .title {
+  overflow: hidden;
+  padding-block-start: 1.5rem;
+  padding-block-end: 1rem;
+  font-weight: 500;
+}
+
+ul li .descr {
   padding-block-end: 1.5rem;
+  font-weight: 300;
+}
+
+ul li .title::before,
+ul li .descr::before {
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 0.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  left: 50%;
+  border-radius: 50%;
+  filter: blur(4px);
+  transform: translate(-50%, 50%);
+}
+
+ul li .title::before {
+  bottom: calc(100% + 0.125rem);
+}
+
+ul li .descr::before {
+  z-index: -1;
+  bottom: 0.25rem;
 }
 
 @media (min-width: 40rem) {
@@ -138,9 +189,21 @@ ul li .descripcion {
     grid-column: 3;
   }
 
-  /* start second card */
   ul li:nth-child(2) {
     grid-row: 2/4;
+  }
+
+  ul li:nth-child(odd) .date::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    left: 0;
+  }
+
+  ul li:nth-child(odd) .date::after {
+    transform: translate(-50%, -50%);
+    left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+  }
+  ul li:nth-child(odd) .date {
+    border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
   }
 }
 
@@ -148,8 +211,10 @@ ul li .descripcion {
   margin-top: 1rem;
   text-align: right;
 }
-
 .credits a {
   color: var(--color);
 }
+
 </style>
+
+
